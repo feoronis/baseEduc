@@ -10,7 +10,16 @@ const publicationSchema = new mongoose.Schema({
         lowercase: true
     },
     date: Date,
-    rating: Number,
+    rating: {
+        scale: {
+            type: Number,
+            default: 0
+        },
+        changes: {
+            type: Array,
+            default: []
+        }
+    },
     idUser: String,
     path: String,
 
